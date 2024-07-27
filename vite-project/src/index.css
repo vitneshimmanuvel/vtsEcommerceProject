@@ -1,0 +1,730 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family:'Poppins' ;
+}
+.flotcol{
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  top: -250px;
+  right: -60%;
+  gap: 10px;
+  width: 35%;
+}
+.newla
+{
+    margin: 7%;
+}
+.headers{
+  background-color: rgb(4, 4, 146);
+  color: white;
+  display: flex;
+  padding: 3%;
+  font-family: sans-serif;
+  position: relative;
+  animation: headerr 1s ease-out ;
+
+}
+
+@keyframes headerr {
+  0%{transform: translateY(-200px);}
+  100%{transform: translateY(0);}
+  
+}
+
+
+
+
+.cartlogo{
+      scale: 250%;
+      margin-top: 15px;
+      margin-left: 19%;
+}
+.x{
+  scale: 400%;
+  margin-top: 15px;
+ 
+  margin-right: 5%;
+}
+
+.flexwrap{
+  display: flex;
+  flex-wrap: wrap;
+}
+.searchs{
+  border-radius: 10pt;
+  border:  none;
+  margin-left: 3%;
+  padding: 1%;
+}
+.i2-flex{
+    display: flex;
+    gap: 10%;
+    width: 20% ;
+   
+}
+
+.white{
+  color: white;
+}
+.tdn{
+  text-decoration: none;
+}
+
+.logohead{
+  width: 100%;
+  scale: 150%;
+  
+  
+  height: 20px;
+}
+
+.count{
+  position: relative;
+  right: 15px;
+  top:-15px
+}
+
+
+.flexleft{
+  margin-left: auto;
+}
+.navbar{
+   max-height:auto;
+   min-height: 5vh;
+   background-color: red;
+}
+.navitems{
+  display:flex ;
+  flex-wrap: wrap;
+  list-style: none;
+  background-color: antiquewhite;
+  max-height: 100%;
+  gap: 10%;
+  justify-content: center;
+  align-items: center;
+  animation: navbar 0.8s ease-in ;
+  font-size: 115%;
+}
+
+@keyframes navbar {
+        0%{
+          transform: translateX(-2000px);
+        }
+        100%{transform: translateX(0);}
+}
+
+
+
+.navhoverdark{
+  padding: 10px ;
+  border-radius: 2%;
+  transition: 0.2s ease;
+}
+.navhoverdark:hover{
+  color: white;
+  background-color: rgb(208, 176, 134);
+}
+.menuitems
+{
+  display: none;
+  position: absolute;
+  background-color: #b0cae8;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  padding: 12px 16px;
+  z-index: 1;
+  list-style: none;
+  scale: 105%;
+
+}
+.menu{
+  position: relative;
+  display: inline-block;
+}
+.menu:hover .menuitems{
+  display:block ;
+  transition: 0.3s ease-in;
+}
+a{
+  text-decoration: none;
+}
+.menuitem{
+  color: #ffffff;
+  padding: 10px;
+}
+.menuitem:hover{
+  
+  color: black;
+}
+.grid-4{
+  display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: auto;
+    gap: 15px;
+    padding: 35px;
+    color:  rgba(27, 90, 125, 1);
+}
+
+.cursor{
+  cursor: pointer;
+}
+
+.trash{
+  background-color: rgb(225, 188, 5);
+  padding:5%;
+  border: none;
+}
+.card
+{
+  display: flex;
+  flex-direction: column;
+ 
+  padding: 4%;
+  gap: 20px;
+  transition: 0.2s;
+  text-align: center;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  
+}
+
+
+
+
+.roundedbutton{
+  border-radius: 15px;
+  padding: 2%;
+  border: none;
+  font-size: 135%;
+  background-color: blue;
+}
+.card:hover{
+  transform: translateY(-10px);
+}
+
+.cardimg{
+  width:96%;
+  height: 200px;
+  align-self: center;
+  
+}
+
+.maintitle{
+  padding: 30px;
+  text-align: center;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 30px;
+  border-color: rgb(181, 161, 134);
+}
+.flexcal{
+  display: flex;
+  flex-direction: column;
+}
+.flex{
+  display: flex;
+  
+  
+}
+.pad-20{
+  padding: 20px;
+}
+.border1{
+  border: solid 1px rgb(192, 180, 165);
+}
+.cart{
+  width: 40%;
+  height: auto;
+ 
+}
+.maincart{
+  
+  background-color: #88a8ff;
+  width: 100%;
+  height: 100vh;
+ 
+}
+.buynowbutton{
+    padding-top: 20px;
+    padding-bottom: 10px;
+    border: none;
+    width: 100%;
+    border-radius: 4px;
+
+}
+
+
+
+.colom{
+  display: flex;
+  flex-direction: column;
+ 
+  border-radius: 20px;
+  height: 290px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+}
+.heartt{
+  width: 40px;
+  position: relative;
+  border-radius: 50%;
+  border: none;
+  left: 78%;
+  top: -45%;
+  height: 30px;
+}
+
+.formslog{
+  background-color: #b1c3f4;
+  width: 400px;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 3vh;
+  text-align: center;
+  border-radius: 10px;
+  scale: 98%;
+  z-index: 2;
+
+}
+
+.loginround{
+  border-radius: 10px;
+  padding: 3px;
+  margin-left: 5px;
+  border: none;
+}
+.marginleft{
+      margin-left: 22px;
+
+}
+
+.with{
+  width: 100%;
+}
+.roundedbutton{
+  color: white;
+}
+.margin1{
+  margin-left: 50px;
+}
+.center{
+  width: 100%;
+  display: flex;
+  height: 100vh;
+  background-color: rgb(80, 80, 244);
+  justify-content: center;
+  align-items: center;
+}
+.margin2{
+  margin-left: 78px;
+}
+.margin3{
+  margin-left: 57px;
+}
+.fullfotter{
+  width: 100%;
+  display: flex;
+  height: auto;
+  justify-content: space-around;
+  background-color: #88a8ff;
+}
+.item1{
+  display: flex;
+  flex-direction: column;
+}
+.px-xl{
+  font-size: x-large;
+  margin-bottom: 10px;
+}
+.p1{
+  padding: 5vh;
+}
+.cartinit{
+  height: 280px;
+  text-align: center;
+}
+.margintop-50{
+  margin-top: 20%;
+}
+.heart{position:absolute ;
+  top: 6%;
+  width: 10%;
+  fill: rgb(171, 146, 164);}
+  
+  .firsthalf{
+    width: 60%;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    height: auto;
+  
+  }
+  .opacity{
+    animation: opacitt 2s ease-in ;
+  }
+  @keyframes opacitt {
+    0%{
+      opacity: 0;
+    }
+    100%{
+      opacity: 1;
+    }
+    
+  }
+  .secondhalf{
+    width: 50%;
+  }
+  .imageslide{
+    background-size: cover;
+    height: 400px;
+    align-items: center;
+    display: flex;
+  }
+  .slideimg{
+    width: 200px;
+  }
+  .mainn{
+    height: 70vh;
+  }
+  .vhh{
+    font-size: 5rem;
+    margin-top: 13%;
+    padding-bottom: 5%;
+  }
+  .fav{
+    width: 100%;
+    height: 100%;
+  }
+
+  .purple
+  {
+    fill:red;
+  }
+  .border1px{
+    border-top: 1px solid black;
+  }
+
+  .mainn{
+    display: flex;
+  }
+  .secon{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50%;
+   
+  }
+  .mainscale{
+   
+    color: #88a8ff;
+    transform: translateY(-1px);
+    
+   
+    animation: car 0.7s ease-in-out;
+  }
+  @keyframes car {
+      0%{
+        transform: translateX(-800px);
+       
+      }   
+  }
+
+.bg-menu{
+  background-color: rgb(185, 171, 105);
+}
+
+.textstart{
+  text-align: start;
+}
+  
+  .cartey{
+    display: flex ;
+
+  }
+.bglight{
+  background-color: rgb(151, 61, 176);
+  border: none;
+}
+  .bgdark{
+       background-color: blue;
+       border: none;
+  }
+.addsub{
+  padding: 5%;
+}
+.rightcard{
+  align-items: center;
+   gap: 5%;
+  
+}
+.widhtfull{
+  width: 20%;
+}
+
+.onclickbutton{
+ 
+background-color: antiquewhite;
+}
+.black{
+  color: black;
+}
+
+.total{
+  padding: 5%;
+}
+.spacearound{
+  justify-content: space-around;
+}
+.textcenter{
+  text-align: center;
+}
+
+.buybutton{
+  width: 7%;
+  border-radius: 12px;
+  scale: 200%;
+  border: none;
+  transition: ease-in-out 0.1s;
+  background-color: #88a8ff;
+
+}
+.buybutton:hover{
+  background-color: rgb(33, 255, 62);
+  scale: 250%;
+  color: white;
+}
+
+.newlap{
+ 
+  font-size: xx-large;
+  
+  padding: 20px;
+}
+.gold{
+  background-color: rgb(255, 230, 88);
+  transition: 0.2s ease-in-out;
+}
+.gold:hover{
+  background-color: rgb(225, 188, 5);
+  transform: translateY(-20px);
+}
+
+
+
+
+
+.loginimage1{
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  z-index: 1;
+  transition: 1s ease-in-out;
+  scale: 10%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  animation: rotateimg 1s ease-in-out  infinite;
+}
+
+/* @keyframes  {
+  0%{
+    transform:translateY(1%);
+  }
+  100%{
+    transform: translateY(0);
+  }
+
+} */
+
+
+
+
+.loginimage2{
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  z-index: 1;
+  transition: 1s ease-in-out;
+  scale: 10%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.loginimage3{
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  z-index: 1;
+  transition: 1s ease-in-out;
+  scale: 10%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.loginimage4{
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  z-index: 1;
+  transition: 1s ease-in-out;
+  scale: 10%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+
+.one{
+  transform: translate(+300%,-150%);
+  scale: 65%;
+}
+
+.two{
+  transform: translate(-360%,-200%);
+   scale: 80%;
+}
+
+.three{
+  transform: translate(-360%,90%);
+  scale: 95%;
+}
+
+.four{
+  transform: translate(200%,90%);
+  scale: 100%;
+}
+.loginimage5{
+  color: white;
+  border-radius: 50%;
+  z-index: 1;
+  transition: 1s ease-in-out;
+  position: absolute;
+  top: 50%;
+  scale: 170%;
+  left: 55%;
+  transform: translate(-50%, -50%);
+}
+.five{
+   top:75%
+}
+.form-group{
+  text-align: center;
+  display: flex;
+  justify-content: space-around;
+}
+.marginauto{
+  margin-left: auto;
+  animation: input 0.7s ease-in;
+}
+
+.svgmail{
+  height: 50px;
+  scale: 300%;
+  position: relative;
+  right: -50%;
+  top: -30px;
+  transform: rotate(30deg);
+  animation: avg 1s ease-in-out ;
+
+}
+
+@keyframes avg {
+  0%{
+    transform: rotate(0deg);
+  }
+  
+}
+
+@keyframes input {
+  0%{
+    transform: translateX(-210px);
+  }
+  100%{
+    transform: translateX(0px);
+  }
+}
+.roundedbutton:hover{
+  background-color: rgb(179, 153, 8);
+}
+.bucketsvg{
+ position: absolute;
+ top: 500px;
+  scale: 100%;
+  height: -500px;
+  width: 400px;
+  animation: bucket 1s ease-in-out   ;
+  
+}
+@keyframes bucket {
+  0%{
+    transform: translateY(100px) ;
+  }
+  100%{
+   transform: translateY(0);
+  }
+}
+.creditcard{
+  position: absolute;
+  top: 60%;
+  right:10% ;
+   scale: 100%;
+   height: -500px;
+   width: 400px;
+   animation: bucket 1s ease-in-out   ;
+   
+ }
+
+ .round{
+  position: absolute;
+  top: 3%;
+   scale: 100%;
+   width: 300px;
+   right: 100px;
+   animation: buck 1s ease-in-out   ;
+   
+ }
+
+@keyframes buck{
+  0%{
+    transform: translateY(-400px) ;
+  }
+  100%{
+   transform: translateY(0);
+  }
+}
+.roundd{
+  position: absolute;
+  top: 2%;
+  right:80% ;
+   scale: 100%;
+   animation: round 1s ease-in-out ;
+   
+ }
+ @keyframes round {
+  0%{
+    transform: translateY(400px) ;
+  }
+  100%{
+   transform: translateY(0);
+  }
+}
+.bgimg{
+  background-image: url(../public/homelap.png);
+  background-repeat: no-repeat;
+  background-size: 200%;
+}
+.bg-gold{
+  background-color: rgb(251, 229, 108);
+}
+.bg-fitt{
+height: 115vh;
+}

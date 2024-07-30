@@ -11,10 +11,11 @@ export default function Login() {
     const navigate = useNavigate()
     function Loginhandler(){
         event.preventDefault()
-        axios.post('http://127.0.0.1:5173',{email,password})
+        axios.post('http://127.0.0.1:3000',{email,password})
         .then((result)=>{
             if(result.data == "logedin")
             {
+                localStorage.setItem("email",email)
                 alert('login successful')
                 navigate('/home')
             }

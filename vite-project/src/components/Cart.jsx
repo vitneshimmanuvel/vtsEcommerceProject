@@ -1,10 +1,13 @@
 import React, { useEffect } from 'react'
 import { useState } from 'react'
 import { FaTrash } from "react-icons/fa";
- const Cart=({prodect ,cart,setcart})=> {
+ const Cart=({prodect ,cart,setcart,total,settotal})=> {
   const [pices , setpices] = useState(1);  
-  function add(){
-    setpices(pices+1)
+  function add(){()=>{
+    setpices(pices+1);
+    settotal()
+  }
+    
   }
   const sub =()=>{
       setpices(pices-1) 

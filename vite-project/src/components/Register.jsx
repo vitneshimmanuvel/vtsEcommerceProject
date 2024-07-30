@@ -4,9 +4,9 @@ import { Link } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios'
 export default function Register() {
-    const [name,setname]= useState("");
+    const [username,setname]= useState("");
     const [email,setemail]= useState("");
-    const [conformpass,setconform]= useState("");
+    const [phno,setconform]= useState("");
     const [password,setpassword]= useState("");
     const[doornumber,Setdoornumber] = useState('');
     const[street,setstreet] = useState('');
@@ -17,7 +17,9 @@ export default function Register() {
 
     function Submithandler(){
         event.preventDefault();
-        axios.post("http://127.0.0.1:5173/register",{name,email,password})
+        axios.post("http://127.0.0.1:3000/register",{username,email,password,doornumber,phno,
+            street,city,state,pincode
+        })
         .then((result)=>{
            if(result.data == "accepted")
            {
@@ -58,17 +60,18 @@ export default function Register() {
                     <label className='labe'>Password</label>
                     <input type="password" className='loginround marginauto' id="password" name="password" required onChange={(e)=>{
 
-                      setconform(e.target.value)  
+                      setpassword(e.target.value)  
                     }}/>
                 </div>
                 <div className="form-group">
-                    <label className='labe'>Confirm Password</label>
-                    <input type="password" className='loginround marginauto' id="confirm-password" name="confirm-password" required onChange={(e)=>{
-                        setpassword(e.target.value)
+                    <label className='labe'>Phone Number</label>
+                    <input type="number" className='loginround marginauto' id="phno" name="phno"  required onChange={(e)=>{
+                        setconform(e.target.value)
                     }}/>
                 </div>
+
                 
-                {/* <h3 className='textstart'>Address</h3>
+                <h3 className='textstart'>Address</h3>
                 <div className="form-group ">
                     <label className='labe'>Doornumber </label>
                     <input type="text" className='loginround marginauto' id="doornumber" name="doornumber" required onChange={(e)=>{
@@ -100,7 +103,7 @@ export default function Register() {
                     <input type="text" className='loginround marginauto' id="pincode" name="pincode" required onChange={(e)=>{
                         setpincode(e.target.value)
                     }}/>
-                </div>*/}
+                </div>
                <a href="/home"><button className='with roundedbutton cursor'>Register</button></a> 
               <Link to="/"> <a href="#"><button className='with roundedbutton cursor'>Log in</button></a> </Link>
    

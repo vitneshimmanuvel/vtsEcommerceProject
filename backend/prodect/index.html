@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enter Product</title>
+</head>
+<body>
+    <h1>Enter New Product</h1>
+    <form id="productForm">
+        <label for="p_name">Product Name:</label>
+        <input type="text" id="p_name" name="p_name" required><br><br>
+
+        <label for="catogory">Category:</label>
+        <input type="text" id="catogory" name="catogory" required><br><br>
+
+        <label for="p_desc">Product Description:</label>
+        <input type="text" id="p_desc" name="p_desc" required><br><br>
+
+        <label for="p_price">Product Price:</label>
+        <input type="number" id="p_price" name="p_price" required><br><br>
+
+        <label for="status">Status:</label>
+        <select id="status" name="status" required>
+            <option value="available">Available</option>
+            <option value="out of stock">Out of Stock</option>
+        </select><br><br>
+
+        <label for="p_qty">Product Quantity:</label>
+        <input type="number" id="p_qty" name="p_qty" required><br><br>
+
+        <label for="rate">Rate:</label>
+        <input type="text" id="rate" name="rate" required pattern="^\d+(\.\d{1,2})?$" title="Please enter a valid rate (e.g., 4.5)"><br><br>
+
+        <label for="image">Product Image (base64):</label>
+        <input type="file" id="image" name="image" accept="image/*" required><br><br>
+
+        <button type="submit">Submit</button>
+    </form>
+
+    <script>
+        document.getElementById('productForm').addEventListener('submit', async function(event) {
+            event.preventDefault();
+            const form = event.target;
+            const formData = new FormData(form);
+            const imageFile = formData.get('image');
+            const reader = new FileReader();
+
+            reader.onloadend = async function() {
+                const imageBase64 = reader.result;
+                const productData = {
+                    p_name: formData.get('p_name'),
+                    catogory: formData.get('catogory'),
+                    p_desc: formData.get('p_desc'),
+                    p_price: parseInt(formData.get('p_price')),
+                    status: formData.get('status'),
+                    p_qty: parseInt(formData.get('p_qty')),
+                    rate: formData.get('rate'),
+                    image: imageBase64
+                };
+
+                try {
+                    const response = await fetch('/addProduct', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json'
+                        },
+                        body: JSON.stringify(productData)
+                    });
+
+                    if (response.ok) {
+                        alert('Product added successfully');
+                        form.reset();
+                    } else {
+                        alert('Failed to add product');
+                    }
+                } catch (error) {
+                    console.error('Error:', error);
+                    alert('An error occurred while adding the product');
+                }
+            };
+
+            reader.readAsDataURL(imageFile);
+        });
+    </script>
+</body>
+</html>

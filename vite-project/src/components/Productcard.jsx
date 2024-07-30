@@ -51,9 +51,9 @@ import {Rating} from 'react-simple-star-rating';
         initialValue={items.ratings}/>
         
      
-      {cart.includes(items)?<button className='roundedbutton  black onclickbutton cursor' onClick={removecart}><FaTrash/></button>
-      : 
-      <button className='roundedbutton white bg-gold cursor' onClick={addcart}><FaCartArrowDown/></button>}
+      {/* {cart.includes(items)?<button className='roundedbutton  black onclickbutton cursor' onClick={removecart}><FaTrash/></button> */}
+    
+      <button className='roundedbutton white bg-gold cursor' onClick={addcart}><FaCartArrowDown/></button>
 
 
      

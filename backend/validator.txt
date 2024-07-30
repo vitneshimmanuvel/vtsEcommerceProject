@@ -1,0 +1,173 @@
+db.createCollection("product", {
+    validator: {
+        $jsonSchema: {
+            bsonType: 'object',
+            required: ['p_name', 'catogory', 'p_desc', 'p_price', 'status', 'p_qty'],
+            properties: {
+                p_name: {
+                    bsonType: 'string',
+                    description: 'Product name should be a string'
+                },
+                catogory: {
+                    bsonType: 'string',
+                    description: 'Category of the product'
+                },
+                p_desc: {
+                    bsonType: 'string',
+                    description: 'Product description should be a string'
+                },
+                p_price: {
+                    bsonType: 'int', 
+                    description: 'Product price should be a number'
+                },
+                status: {
+                    bsonType: 'string',
+                    enum: ['available', 'out of stock'],
+                    description: 'Status of the product'
+                },
+                p_qty: {
+                    bsonType: 'int',
+                    description: 'Product quantity should be a positive number'
+                }
+            }
+        }
+    }
+});
+
+db.createCollection("cart_fav", {
+    validator: {
+        $jsonSchema: {
+            bsonType: 'object',
+            required: ['u_id', 'p_id', 'mode'],
+            properties: {
+                u_id: {
+                    bsonType: 'string',
+                    description: 'User ID'
+                },
+                p_id: {
+                    bsonType: 'string',
+                    description: 'Product ID'
+                },
+                mode: {
+                    bsonType: 'string',
+                    enum: ['cart', 'fav'],
+                    description: 'Either cart or fav'
+                }
+            }
+        }
+    }
+});
+
+
+db.createCollection("product", {
+    validator: {
+        $jsonSchema: {
+            bsonType: 'object',
+            required: ['p_name', 'catogory', 'p_desc', 'p_price', 'status', 'p_qty','rate','image'],
+            properties: {
+                p_name: {
+                    bsonType: 'string',
+                    description: 'Product name should be a string'
+                },
+                catogory: {
+                    bsonType: 'string',
+                    description: 'Category of the product'
+                },
+                p_desc: {
+                    bsonType: 'string',
+                    description: 'Product description should be a string'
+                },
+                p_price: {
+                    bsonType: 'int', 
+                    description: 'Product price should be a number'
+                },
+                status: {
+                    bsonType: 'string',
+                    enum: ['available', 'out of stock'],
+                    description: 'Status of the product'
+                },
+                p_qty: {
+                    bsonType: 'int',
+                    description: 'Product quantity should be a positive number'
+                },
+                rate: {
+                    bsonType: 'string',
+                    description: 'Product rate should be a Floating number eg:4.4'
+                },
+                image:{
+                    bsonType: 'string',
+                    description: 'Product image should be a base64'
+                }
+
+            }
+        }
+    }
+});
+
+
+db.createCollection("userdata", {
+  validator: {
+    $jsonSchema: {
+      bsonType: "object",
+      required: ["username", "email", "phno", "password", "address"],
+      properties: {
+        username: {
+          bsonType: "string",
+          minLength: 1,
+          description: "must be a non-empty string and is required"
+        },
+        email: {
+          bsonType: "string",
+          minLength:5,
+          description: "must be a valid email address and is required"
+        },
+        phno: {
+          bsonType: "string",
+          minLength: 1,
+          description: "must be a non-empty string and is required"
+        },
+        password: {
+          bsonType: "string",
+          minLength: 1,
+          description: "must be a non-empty string and is required"
+        },
+        address: {
+          bsonType: "array",
+          minItems: 1,
+          items: {
+            bsonType: "object",
+            required: ["doornumber", "street", "city", "state", "pincode"],
+            properties: {
+              doornumber: {
+                bsonType: "string",
+                minLength: 1,
+                description: "must be a non-empty string and is required"
+              },
+              street: {
+                bsonType: "string",
+                minLength: 1,
+                description: "must be a non-empty string and is required"
+              },
+              city: {
+                bsonType: "string",
+                minLength: 1,
+                description: "must be a non-empty string and is required"
+              },
+              state: {
+                bsonType: "string",
+                minLength: 1,
+                description: "must be a non-empty string and is required"
+              },
+              pincode: {
+                bsonType: "string",
+                minLength: 1,
+                description: "must be a non-empty string and is required"
+              }
+            }
+          },
+          description: "must be an array with at least one address object and is required"
+        }
+      }
+    }
+  }
+});

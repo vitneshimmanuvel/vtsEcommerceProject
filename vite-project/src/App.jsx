@@ -10,6 +10,8 @@ import Register from './components/Register'
 import Home from './components/Home'
 import Carthead from './components/Carthead'
 import { useState } from 'react'
+import Navkichen from './components/Navkichen'
+import Prodectlist from './components/Prodectlist'
 function App() {
 
   
@@ -22,8 +24,11 @@ function App() {
     <Route path='/'  element={<Login></Login>}></Route>
     <Route path='/home' element={<Home cart={cart} setcart={setcart} length={cart.length}></Home>}></Route>
     <Route  path='/register' element={<Register></Register>}></Route>
-    <Route  path='/prodect' element={<Prodect></Prodect>}></Route>
+    <Route  path='/prodet' element={<Prodect></Prodect>}></Route>
+    <Route path = '/prodect' element={<Navkichen></Navkichen>}></Route>
     <Route path='/cart' element={<Cartpage cart={cart} setcart={setcart}></Cartpage>}></Route>
+    <Route path = '/products' element={<Prodectlist/>}></Route>
+
     </Routes>
    
     </>
